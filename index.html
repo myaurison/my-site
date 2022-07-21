@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<!--
+
+███████╗██████╗░██████╗░░█████╗░███████╗██╗░░░██╗
+██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝██║░░░██║
+█████╗░░██████╔╝██████╦╝███████║█████╗░░╚██╗░██╔╝
+██╔══╝░░██╔══██╗██╔══██╗██╔══██║██╔══╝░░░╚████╔╝░
+███████╗██║░░██║██████╦╝██║░░██║███████╗░░╚██╔╝░░
+╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝░░╚═╝╚══════╝░░░╚═╝░░░
+-->
+<html lang="en">
+	<head>
+		<title>FleM 🤔</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		
+		<style>
+			body {
+				background-color: #000000;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+
+			* {
+            	margin: 0;
+            	padding: 0;
+
+				font-family: monospace;
+				color: white;
+				text-shadow: 2px 2px #000;
+			}
+
+			.center {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+
+				transform: translate(-50%, -50%);
+				color: white;
+				text-shadow: 2px 2px #000;
+        	}
+			
+			.info {
+				z-index: 999999;
+				color: white;
+			}
+
+			.begin {
+				cursor: pointer;
+			}
+
+			#overlay {
+				position: fixed;
+				z-index: 9999;
+				background-color: #000;
+
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+        	}
+
+			#swarm {
+				display: block;
+			}
+
+			.marquee {
+				width: 450px;
+				line-height: 50px;
+				color: white;
+				white-space: nowrap;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			
+			.marquee p {
+				display: inline-block;
+				padding-left: 100%;
+				animation: marquee 15s linear infinite;
+			}
+
+			@keyframes marquee {
+				0%   { transform: translate(0, 0); }
+				100% { transform: translate(-100%, 0); }
+			}
+		</style>
+	</head>
+	
+	<body>
+		<canvas id="swarm"></canvas>
+		<div id="overlay" onclick="music.play();"><span class="center info" id="status_text"></span></div>                                                                  
+    <div class="main center">
+        <div style="font-size: 40px;" class="logo-blur logo-bass"><span class="logo-neon">FleM</span></div>                                        
+</pre>
+		<div class="center" id="data" style="opacity: 0%; margin-top: 120px; text-align: center;">
+			<a href="https://vk.com/ovh_flem">vk</a>
+			<a href="https://www.youtube.com/channel/UC4OtR5hd5RurGbGRXywR9lA?view_as=subscriber">youtube</a>
+			<a href="https://fawedon.ru">fawemc</a>
+			<a href="http://don.venomcraft.tk/">venomcraft</a>
+			<br> <br> <pre>ахуеть не встать:</pre>
+		</div>
+		<div class="center" id="shoutout_marquee" style="opacity: 0%; margin-top: 155px;">
+			<div class="marquee">
+				<p>fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk fawemc.me venomcraft.tk</p>
+			</div>
+		</div>
+		<audio id="music" src="https://erbaev.site/assets\audio\music.mp3" autoplay="" loop="" onplaying="setTimeout(()=>{window.overlay.remove();render();start_text();},3500);" style="display: none;"></audio>
+		<script src="https://erbaev.site/assets\js\page.js"></script>
+	</body>
+</html>
